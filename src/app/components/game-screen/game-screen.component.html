@@ -1,0 +1,13 @@
+<div class="game-screen">
+  <h2>{{ category }}</h2>
+  <div class="word-display">{{ wordDisplay }}</div>
+  <div class="letters">
+    <button *ngFor="let letter of letters" (click)="guessLetter(letter)"
+      [disabled]="guessedLetters.has(letter)">
+      {{ letter }}
+    </button>
+  </div>
+  <div class="message">{{ message }}</div>
+  <div class="attempts">Attempts left: {{ attempts }}</div>
+  <button *ngIf="message" (click)="resetGame()">Play Again</button>
+</div>

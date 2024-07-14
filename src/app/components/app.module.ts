@@ -8,22 +8,18 @@ import {
 
 import { AppRoutingModule } from '../app-routing.module';
 import { AppComponent } from '../app.component';
-import { CategoryMoviesComponent } from './category-movies/category-movies.component';
-import { CategoryTvshowsComponent } from './category-tvshows/category-tvshows.component';
-import { CategoryCountriesComponent } from './category-countries/category-countries.component';
-import { CategoryCapitalcitiesComponent } from './category-capitalcities/category-capitalcities.component';
-import { CategoryAnimalsComponent } from './category-animals/category-animals.component';
-import { CategorySportsComponent } from './category-sports/category-sports.component';
+import { StartScreenComponent } from './start-screen/start-screen.component';
+import { HowToPlayComponent } from './how-to-play/how-to-play.component';
+import { PickCategoryComponent } from './pick-category/pick-category.component';
+import { GameScreenComponent } from './game-screen/game-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryMoviesComponent,
-    CategoryTvshowsComponent,
-    CategoryCountriesComponent,
-    CategoryCapitalcitiesComponent,
-    CategoryAnimalsComponent,
-    CategorySportsComponent,
+    StartScreenComponent,
+    HowToPlayComponent,
+    PickCategoryComponent,
+    GameScreenComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [provideHttpClient(withFetch())],

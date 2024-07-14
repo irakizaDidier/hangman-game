@@ -11,6 +11,12 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
+  getCategories(): Observable<string[]> {
+    return this.http
+      .get<any>(this.dataUrl)
+      .pipe(map((data) => Object.keys(data.categories)));
+  }
+
   getCategoryData(category: string): Observable<any[]> {
     return this.http
       .get<any>(this.dataUrl)
