@@ -1,13 +1,45 @@
-<div class="game-screen">
-  <h2>{{ category }}</h2>
-  <div class="word-display">{{ wordDisplay }}</div>
-  <div class="letters">
+<div class="game-screen flex flex-col items-center">
+  <div class="flex items-center justify-between w-9/12 px-4 mt-4">
+    <div class="flex justify-between gap-3 w-3/12">
+      <button class="menu-button" (click)="openMenu()">
+        <img src="assets/images/icon-menu.svg" alt="Menu" />
+      </button>
+      <h2 class="category-title">{{ category }}</h2>
+    </div>
+    <div class="flex items-center space-x-2">
+      <div class="attempts-bar">
+        <div class="attempts-left" [style.width.%]="attempts * 12.5"></div>
+      </div>
+      <img src="assets/images/icon-heart.svg" alt="Heart" class="heart-icon" />
+    </div>
+  </div>
+  <div class="word-display mt-8">
+    <ng-container *ngFor="let char of wordDisplay.split(''); let i = index">
+      <span *ngIf="char !== '_'" class="letter">{{ char }}</span>
+      <span *ngIf="char === '_'" class="empty"></span>
+    </ng-container>
+  </div>
+  <div class="letters grid grid-cols-7 gap-4 mt-8">
     <button *ngFor="let letter of letters" (click)="guessLetter(letter)"
-      [disabled]="guessedLetters.has(letter)">
+      [disabled]="guessedLetters.has(letter) || isPaused"
+      class="letter-button">
       {{ letter }}
     </button>
   </div>
-  <div class="message">{{ message }}</div>
-  <div class="attempts">Attempts left: {{ attempts }}</div>
-  <button *ngIf="message" (click)="resetGame()">Play Again</button>
+</div>
+
+<!-- Modal -->
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content" *ngIf="modalType === 'paused'">
+    <h2 class="title">{{ message }}</h2>
+    <button (click)="continueGame()">Continue</button>
+    <button (click)="newCategory()">New Category</button>
+    <button (click)="quitGame()">Quit Game</button>
+  </div>
+  <div class="modal-content" *ngIf="modalType === 'gameOver'">
+    <h2 class="title">{{ message }}</h2>
+    <button (click)="resetGame()">Play Again!</button>
+    <button (click)="newCategory()">New Category</button>
+    <button (click)="quitGame()">Quit Game</button>
+  </div>
 </div>

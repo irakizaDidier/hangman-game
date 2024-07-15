@@ -15,6 +15,9 @@ export class GameScreenComponent implements OnInit {
   message: string = '';
   attempts: number = 8;
   guessedLetters: Set<string> = new Set();
+  showModal: boolean = false;
+  modalType: 'gameOver' | 'paused' = 'gameOver';
+  isPaused: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.category = this.route.snapshot.paramMap.get('category')!;
@@ -27,7 +30,7 @@ export class GameScreenComponent implements OnInit {
   ngOnInit(): void {
     if (this.words.length > 0) {
       this.word = this.selectRandomWord(this.words);
-      this.wordDisplay = '_ '.repeat(this.word.length).trim();
+      this.wordDisplay = '_'.repeat(this.word.length);
     }
   }
 
@@ -41,7 +44,7 @@ export class GameScreenComponent implements OnInit {
   }
 
   guessLetter(letter: string): void {
-    if (this.guessedLetters.has(letter) || this.message) {
+    if (this.guessedLetters.has(letter) || this.message || this.isPaused) {
       return;
     }
 
@@ -53,21 +56,24 @@ export class GameScreenComponent implements OnInit {
       this.attempts--;
       if (this.attempts === 0) {
         this.message = 'You Lose!';
+        this.modalType = 'gameOver';
+        this.showModal = true;
       }
     }
 
     if (this.wordDisplay.indexOf('_') === -1) {
       this.message = 'You Win!';
+      this.modalType = 'gameOver';
+      this.showModal = true;
     }
   }
 
   updateWordDisplay(letter: string): void {
     let newDisplay = '';
     for (let i = 0; i < this.word.length; i++) {
-      newDisplay += this.word[i] === letter ? letter : this.wordDisplay[i * 2];
-      newDisplay += ' ';
+      newDisplay += this.word[i] === letter ? letter : this.wordDisplay[i];
     }
-    this.wordDisplay = newDisplay.trim();
+    this.wordDisplay = newDisplay;
   }
 
   resetGame(): void {
@@ -76,6 +82,34 @@ export class GameScreenComponent implements OnInit {
     this.message = '';
     this.attempts = 8;
     this.guessedLetters.clear();
+    this.showModal = false;
+    this.isPaused = false;
     this.ngOnInit();
+  }
+
+  newCategory(): void {
+    this.router.navigate(['/pick-category']);
+    this.showModal = false;
+  }
+
+  quitGame(): void {
+    this.router.navigate(['/']);
+    this.showModal = false;
+  }
+
+  openMenu(): void {
+    if (this.message === 'You Win!' || this.message === 'You Lose!') {
+      return;
+    }
+    this.isPaused = true;
+    this.message = 'Paused';
+    this.modalType = 'paused';
+    this.showModal = true;
+  }
+
+  continueGame(): void {
+    this.isPaused = false;
+    this.message = '';
+    this.showModal = false;
   }
 }
