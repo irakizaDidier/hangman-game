@@ -1,6 +1,5 @@
 .how-to-play {
-  @apply text-center text-white p-5 min-h-screen flex flex-col items-center  bg-cover bg-center;
-  background-image: url("/assets/images/background-desktop.svg");
+  @apply text-center text-white p-5 flex flex-col items-center;
 }
 
 .back-button {
@@ -54,9 +53,6 @@
 }
 
 @media (max-width: 840px) {
-  .how-to-play {
-    background-image: url("/assets/images/background-tablet.svg");
-  }
   .steps {
     @apply flex-col;
   }
@@ -68,7 +64,6 @@
 
 @media (max-width: 480px) {
   .how-to-play {
-    background-image: url("/assets/images/background-mobile.svg");
     @apply flex flex-col;
   }
   .steps {

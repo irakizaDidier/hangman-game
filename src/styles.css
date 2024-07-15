@@ -10,4 +10,20 @@
 }
 body {
   font-family: "Mouse Memoirs", sans-serif;
+  background-image: url("/assets/images/background-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+@media (max-width: 840px) {
+  body {
+    background-image: url("/assets/images/background-tablet.svg");
+  }
+}
+
+@media (max-width: 480px) {
+  Body {
+    background-image: url("/assets/images/background-mobile.svg");
+  }
 }

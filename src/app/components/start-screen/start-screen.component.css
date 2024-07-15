@@ -1,6 +1,5 @@
 .hangman-background {
   @apply flex flex-col items-center justify-center min-h-screen bg-cover bg-center;
-  background-image: url("/assets/images/background-desktop.svg");
 }
 
 .game-container {
@@ -44,22 +43,15 @@
 }
 
 .hangman-button {
-  @apply text-white font-bold py-2 px-4 rounded-3xl transition-colors duration-300;
+  @apply text-white font-bold py-2 px-4 rounded-3xl transition-colors duration-300 cursor-pointer;
   background-color: #2463ff;
-}
-.hangman-button:hover {
-  background: linear-gradient(180deg, #ff7eb3, #679dae);
 }
 
 .play-button img {
   @apply w-9 h-9;
 }
 
-@media (max-width: 768px) {
-  .hangman-background {
-    background-image: url("/assets/images/background-tablet.svg");
-  }
-
+@media (max-width: 840px) {
   .game-container {
     @apply p-6;
     max-width: 450px;
@@ -87,10 +79,6 @@
 }
 
 @media (max-width: 480px) {
-  .hangman-background {
-    background-image: url("/assets/images/background-mobile.svg");
-  }
-
   .game-container {
     @apply p-4;
     max-width: 250px;
