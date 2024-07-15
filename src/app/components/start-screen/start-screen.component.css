@@ -1,0 +1,119 @@
+.hangman-background {
+  @apply flex flex-col items-center justify-center min-h-screen bg-cover bg-center;
+  background-image: url("/assets/images/background-desktop.svg");
+}
+
+.game-container {
+  @apply flex flex-col items-center justify-center p-8 rounded-xl text-center;
+  background: linear-gradient(
+    180deg,
+    rgba(52, 74, 186, 0.8),
+    rgba(0, 20, 121, 0.8)
+  );
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hangman-title {
+  @apply text-8xl font-bold mb-8;
+  background: linear-gradient(180deg, hsl(209, 100%, 70%), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 3px #243041;
+  text-align: center;
+}
+
+.hangman-title .sub {
+  @apply mb-0;
+  background: linear-gradient(180deg, hsl(209, 100%, 70%), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px #243041;
+}
+
+.play-button {
+  @apply flex items-center justify-center w-24 h-24  cursor-pointer transition-transform duration-300 mb-4;
+  background: linear-gradient(180deg, #ff7eb3, #679dae);
+  border-radius: 50%;
+  border: none;
+}
+
+.play-button:hover {
+  @apply scale-110;
+}
+
+.hangman-button {
+  @apply text-white font-bold py-2 px-4 rounded-3xl transition-colors duration-300;
+  background-color: #2463ff;
+}
+.hangman-button:hover {
+  background: linear-gradient(180deg, #ff7eb3, #679dae);
+}
+
+.play-button img {
+  @apply w-9 h-9;
+}
+
+@media (max-width: 768px) {
+  .hangman-background {
+    background-image: url("/assets/images/background-tablet.svg");
+  }
+
+  .game-container {
+    @apply p-6;
+    max-width: 450px;
+  }
+
+  .hangman-title {
+    @apply text-6xl;
+  }
+
+  .hangman-title .sub {
+    @apply text-4xl;
+  }
+
+  .play-button {
+    @apply w-20 h-20 md:w-24 md:h-24;
+  }
+
+  .play-button img {
+    @apply w-10 h-10;
+  }
+
+  .hangman-button {
+    @apply py-1 px-3;
+  }
+}
+
+@media (max-width: 480px) {
+  .hangman-background {
+    background-image: url("/assets/images/background-mobile.svg");
+  }
+
+  .game-container {
+    @apply p-4;
+    max-width: 250px;
+  }
+
+  .hangman-title {
+    @apply text-5xl;
+    -webkit-text-stroke: 1.5px #243041;
+  }
+
+  .hangman-title .sub {
+    @apply text-3xl;
+  }
+
+  .play-button {
+    @apply w-16 h-16;
+  }
+
+  .play-button img {
+    @apply w-8 h-8;
+  }
+
+  .hangman-button {
+    @apply py-1 px-2;
+  }
+}

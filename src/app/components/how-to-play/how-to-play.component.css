@@ -1,0 +1,84 @@
+.how-to-play {
+  @apply text-center text-white p-5 min-h-screen flex flex-col items-center  bg-cover bg-center;
+  background-image: url("/assets/images/background-desktop.svg");
+}
+
+.back-button {
+  @apply cursor-pointer;
+  background: linear-gradient(180deg, #ff7eb3, #679dae);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+
+.back-button img {
+  @apply w-6 h-6;
+}
+
+.how-to-play h2 {
+  @apply text-4xl mb-3 font-bold;
+}
+
+.steps {
+  @apply flex flex-row gap-3;
+  flex-wrap: wrap;
+}
+
+.step {
+  @apply bg-white rounded-lg p-5 m-2 shadow-lg items-center flex flex-col;
+  max-width: 17rem;
+}
+
+.title {
+  @apply text-8xl mb-6 font-bold;
+  background: linear-gradient(180deg, hsl(209, 100%, 70%), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 3px #243041;
+}
+
+.step h1 {
+  @apply font-bold text-center;
+  color: #2463ff;
+}
+
+.step h2 {
+  @apply mb-2 font-bold;
+  color: #261676;
+}
+
+.step p {
+  @apply text-base font-medium;
+  color: #887dc0;
+}
+
+@media (max-width: 840px) {
+  .how-to-play {
+    background-image: url("/assets/images/background-tablet.svg");
+  }
+  .steps {
+    @apply flex-col;
+  }
+  .step {
+    @apply flex-row gap-4 text-start;
+    max-width: 27rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-to-play {
+    background-image: url("/assets/images/background-mobile.svg");
+    @apply flex flex-col;
+  }
+  .steps {
+    @apply flex-col;
+  }
+  .step {
+    @apply flex-row gap-4 text-start;
+  }
+  .title {
+    @apply text-6xl mb-6 font-bold;
+    -webkit-text-stroke: 1px #243041;
+  }
+}

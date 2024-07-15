@@ -1,5 +1,16 @@
-<div>
-    <h1>Hangman Game</h1>
-    <button routerLink="/how-to-play">How to Play</button>
-    <button routerLink="/pick-category">Start Game</button>
+<div
+  class="flex flex-col items-center justify-center min-h-screen bg-cover bg-center hangman-background">
+  <div class="game-container flex flex-col items-center">
+    <h1 class="hangman-title flex flex-col m-0 p-0">
+      <span class="text-start text-5xl sub">The </span>
+      <span>Hangman </span>
+      <span class="text-end text-5xl sub">Game</span>
+    </h1>
+    <button class="play-button">
+      <img src="assets/images/icon-play.svg" alt="Play Button"
+        (click)="startGame()">
+    </button>
+    <button routerLink="/how-to-play" class="hangman-button mt-4">How to
+      Play</button>
+  </div>
 </div>

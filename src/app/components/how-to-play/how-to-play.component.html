@@ -1,5 +1,41 @@
-<div>
-  <h2>How to Play</h2>
-  <p>...</p>
-  <button routerLink="/">Back to Start</button>
+<div class="how-to-play">
+  <div class="flex w-4/5 mb-6 justify-between main-top">
+    <button class="back-button " routerLink="/">
+      <img src="/assets/images/icon-back.svg" alt="Back">
+    </button>
+    <h1 class="title">How to Play</h1>
+    <div></div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <h1>01</h1>
+      <div>
+        <h2>Choose a Category</h2>
+        <p>First, choose a word category, like animals or movies. The computer
+          then randomly selects a secret word from that topic and shows you
+          blanks
+          for each letter of the word.</p>
+      </div>
+    </div>
+    <div class="step">
+      <h1>02</h1>
+      <div>
+        <h2>Guess Letters</h2>
+        <p>Take turns guessing letters. The computer fills in the relevant blank
+          spaces if your guess is correct. If it’s wrong, you lose some health,
+          which empties after eight incorrect guesses.</p>
+      </div>
+    </div>
+    <div class="step">
+      <h1>03</h1>
+      <div>
+        <h2>Win or Lose</h2>
+        <p>You win by guessing all the letters in the word before your health
+          runs
+          out. If the health bar empties before you guess the word, you
+          lose.</p>
+      </div>
+    </div>
+  </div>
 </div>
