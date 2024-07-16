@@ -15,7 +15,8 @@
 }
 
 .word-display .empty {
-  @apply bg-gray-600 w-12 h-12 flex items-center justify-center rounded-lg;
+  @apply w-12 h-12 flex items-center justify-center rounded-lg;
+  background-color: #261676;
 }
 
 .letters {
@@ -23,7 +24,8 @@
 }
 
 .letter-button {
-  @apply bg-white text-blue-500 font-bold text-xl py-2 px-4 rounded shadow-md;
+  @apply font-bold text-xl py-2 px-4 rounded shadow-md;
+  color: #261676;
 }
 
 .letter-button:disabled {
@@ -40,11 +42,11 @@
 }
 
 .attempts-bar {
-  @apply w-32 h-4 bg-white rounded-full overflow-hidden items-center flex;
+  @apply w-32 h-4 bg-white rounded-full overflow-hidden items-center flex p-1;
 }
 
 .attempts-left {
-  @apply h-2  rounded-full;
+  @apply h-3  rounded-full;
   background-color: #261676;
 }
 
