@@ -36,6 +36,9 @@
   @apply p-2 rounded-full;
   background: linear-gradient(180deg, #ff7eb3, #679dae);
 }
+.menu-icon {
+  @apply w-6 h-6;
+}
 
 .heart-icon {
   @apply w-8 h-8;
@@ -131,6 +134,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2.5px #243041;
+  top: -20%;
 }
 
 @media (max-width: 840px) {
@@ -139,7 +143,9 @@
   }
 
   .title {
-    @apply text-4xl mb-4;
+    @apply text-7xl mb-4;
+    -webkit-text-stroke: 2px #243041;
+    top: -20%;
   }
 
   .modal-content button {
@@ -153,7 +159,9 @@
   }
 
   .title {
-    @apply text-3xl mb-3;
+    @apply text-5xl mb-3;
+    -webkit-text-stroke: 2px #243041;
+    top: -15%;
   }
 
   .modal-content button {

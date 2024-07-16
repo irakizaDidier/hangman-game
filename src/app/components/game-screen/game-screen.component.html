@@ -2,7 +2,7 @@
   <div class="flex items-center justify-between w-9/12 px-4 mt-4">
     <div class="flex justify-between gap-3 w-3/12">
       <button class="menu-button" (click)="openMenu()">
-        <img src="assets/images/icon-menu.svg" alt="Menu" />
+        <img src="/assets/images/icon-menu.svg" alt="Menu" class="menu-icon" />
       </button>
       <h2 class="category-title">{{ category }}</h2>
     </div>
@@ -10,7 +10,7 @@
       <div class="attempts-bar">
         <div class="attempts-left" [style.width.%]="attempts * 12.5"></div>
       </div>
-      <img src="assets/images/icon-heart.svg" alt="Heart" class="heart-icon" />
+      <img src="/assets/images/icon-heart.svg" alt="Heart" class="heart-icon" />
     </div>
   </div>
   <div class="word-display mt-8">
@@ -30,14 +30,14 @@
 
 <!-- Modal -->
 <div *ngIf="showModal" class="modal">
-  <div class="modal-content" *ngIf="modalType === 'paused'">
-    <h2 class="title">{{ message }}</h2>
+  <div class="modal-content relative" *ngIf="modalType === 'paused'">
+    <h2 class="title absolute">{{ message }}</h2>
     <button (click)="continueGame()">Continue</button>
     <button (click)="newCategory()">New Category</button>
     <button (click)="quitGame()">Quit Game</button>
   </div>
-  <div class="modal-content" *ngIf="modalType === 'gameOver'">
-    <h2 class="title">{{ message }}</h2>
+  <div class="modal-content relative" *ngIf="modalType === 'gameOver'">
+    <h2 class="title absolute">{{ message }}</h2>
     <button (click)="resetGame()">Play Again!</button>
     <button (click)="newCategory()">New Category</button>
     <button (click)="quitGame()">Quit Game</button>

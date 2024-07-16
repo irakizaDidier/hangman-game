@@ -7,10 +7,10 @@
     <h2 class="category-title">Pick a Category</h2>
     <div></div>
   </div>
-  <ul class="category-list grid grid-cols-3 justify-center gap-4 mt-8">
+  <ul class="category-list grid grid-cols-3 justify-center">
     <li class="category-item" *ngFor="let category of categories"
       (click)="selectCategory(category)">
-      {{ category }}
+      {{ category | uppercase }}
     </li>
   </ul>
 </div>

@@ -3,24 +3,26 @@
 }
 
 .game-container {
-  @apply flex flex-col items-center justify-center p-8 rounded-xl text-center;
+  @apply flex flex-col items-center justify-center  rounded-xl text-center;
   background: linear-gradient(
     180deg,
     rgba(52, 74, 186, 0.8),
     rgba(0, 20, 121, 0.8)
   );
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 310px;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
 }
 
 .hangman-title {
-  @apply text-8xl font-bold mb-8;
+  @apply text-8xl font-bold;
   background: linear-gradient(180deg, hsl(209, 100%, 70%), #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 3px #243041;
   text-align: center;
+  top: -39%;
 }
 
 .hangman-title .sub {
@@ -59,6 +61,7 @@
 
   .hangman-title {
     @apply text-6xl;
+    top: -22%;
   }
 
   .hangman-title .sub {
@@ -87,6 +90,7 @@
   .hangman-title {
     @apply text-5xl;
     -webkit-text-stroke: 1.5px #243041;
+    top: -20%;
   }
 
   .hangman-title .sub {

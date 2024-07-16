@@ -45,6 +45,7 @@
 .step h2 {
   @apply mb-2 font-bold;
   color: #261676;
+  text-transform: uppercase;
 }
 
 .step p {

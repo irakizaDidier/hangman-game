@@ -22,7 +22,7 @@
   -webkit-text-stroke: 3px #243041;
 }
 .category-list {
-  @apply justify-center gap-4 mt-8 list-none  w-4/5 grid-cols-3;
+  @apply justify-center gap-7 mt-12 list-none  w-4/5 grid-cols-3;
 }
 
 .category-item {
