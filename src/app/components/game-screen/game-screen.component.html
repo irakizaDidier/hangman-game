@@ -19,7 +19,7 @@
       <span *ngIf="char === '_'" class="empty"></span>
     </ng-container>
   </div>
-  <div class="letters grid grid-cols-7 gap-4 mt-8">
+  <div class="letters grid grid-cols-9 gap-4 mt-8">
     <button *ngFor="let letter of letters" (click)="guessLetter(letter)"
       [disabled]="guessedLetters.has(letter) || isPaused"
       class="letter-button">

@@ -20,12 +20,13 @@
 }
 
 .letters {
-  @apply grid grid-cols-7 gap-4 mt-8;
+  @apply grid grid-cols-9 gap-4 mt-8;
 }
 
 .letter-button {
   @apply font-bold text-xl py-2 px-4 rounded shadow-md;
   color: #261676;
+  border: none;
 }
 
 .letter-button:disabled {

@@ -30,7 +30,7 @@ export class GameScreenComponent implements OnInit {
   ngOnInit(): void {
     if (this.words.length > 0) {
       this.word = this.selectRandomWord(this.words);
-      this.wordDisplay = '_'.repeat(this.word.length);
+      this.wordDisplay = this.word.replace(/[a-zA-Z]/g, '_');
     }
   }
 
