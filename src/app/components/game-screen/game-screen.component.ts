@@ -29,8 +29,8 @@ export class GameScreenComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.words.length > 0) {
-      this.word = this.selectRandomWord(this.words).replace(/\s+/g, '');
-      this.wordDisplay = '_'.repeat(this.word.length);
+      this.word = this.selectRandomWord(this.words).toLowerCase();
+      this.wordDisplay = this.word.replace(/[^ ]/g, '_'); // Keep spaces, replace other chars with '_'
     }
   }
 
@@ -71,7 +71,13 @@ export class GameScreenComponent implements OnInit {
   updateWordDisplay(letter: string): void {
     let newDisplay = '';
     for (let i = 0; i < this.word.length; i++) {
-      newDisplay += this.word[i] === letter ? letter : this.wordDisplay[i];
+      if (this.word[i] === letter) {
+        newDisplay += letter;
+      } else if (this.word[i] === ' ') {
+        newDisplay += ' ';
+      } else {
+        newDisplay += this.wordDisplay[i];
+      }
     }
     this.wordDisplay = newDisplay;
   }

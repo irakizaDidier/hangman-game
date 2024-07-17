@@ -13,12 +13,16 @@
       <img src="/assets/images/icon-heart.svg" alt="Heart" class="heart-icon" />
     </div>
   </div>
-  <div class="word-display mt-8">
+  <div
+    class="word-display mt-8 flex flex-wrap justify-center space-x-2 content-center">
     <ng-container *ngFor="let char of wordDisplay.split(''); let i = index">
-      <span *ngIf="char !== '_'" class="letter">{{ char }}</span>
+      <span *ngIf="char === ' '" class="space">&nbsp;</span>
+      <span *ngIf="char !== ' ' && char !== '_'" class="letter">{{ char
+        }}</span>
       <span *ngIf="char === '_'" class="empty"></span>
     </ng-container>
   </div>
+
   <div class="letters grid grid-cols-9 gap-4 mt-8">
     <button *ngFor="let letter of letters" (click)="guessLetter(letter)"
       [disabled]="guessedLetters.has(letter) || isPaused"

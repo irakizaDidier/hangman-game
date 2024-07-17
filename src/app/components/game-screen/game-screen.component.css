@@ -7,7 +7,8 @@
 }
 
 .word-display {
-  @apply flex flex-wrap justify-center space-x-2;
+  @apply flex flex-wrap justify-center items-center space-x-2 space-y-4 content-center  py-8;
+  width: 45%;
 }
 
 .word-display .letter {
@@ -18,19 +19,23 @@
   @apply w-12 h-12 flex items-center justify-center rounded-lg;
   background-color: #261676;
 }
-
+.word-display .space {
+  @apply w-10 h-12;
+}
 .letters {
-  @apply grid grid-cols-9 gap-4 mt-8;
+  @apply grid grid-cols-9 gap-4 mt-8 mx-6;
 }
 
 .letter-button {
-  @apply font-bold text-xl py-2 px-4 rounded shadow-md;
+  @apply font-bold text-xl py-1 px-4 rounded-xl shadow-lg;
   color: #261676;
   border: none;
+  text-transform: uppercase;
 }
 
 .letter-button:disabled {
-  @apply bg-gray-400 cursor-not-allowed;
+  @apply cursor-not-allowed;
+  background-color: rgba(150, 155, 183, 0.3);
 }
 
 .menu-button {
@@ -74,6 +79,9 @@
   .word-display .empty {
     @apply w-10 h-10 text-3xl;
   }
+  .word-display {
+    width: 95%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -96,6 +104,9 @@
   .word-display .empty {
     @apply w-8 h-8 text-2xl;
   }
+  .word-display {
+    width: 95%;
+  }
 }
 
 .modal {
@@ -113,7 +124,11 @@
   padding: 20px;
   border-radius: 10px;
   color: white;
-  @apply flex flex-col w-1/5 items-center justify-center;
+  @apply flex flex-col w-4/12 h-1/2 items-center justify-center;
+  border-radius: 72px;
+  box-shadow: inset 0 -7px 0 3px #140e66, inset 0 6px 0 7px #2463ff;
+  --y: -50vh;
+  --time-scale: 2;
 }
 
 .modal-content button {
@@ -130,42 +145,48 @@
 }
 
 .title {
-  @apply text-6xl mb-6;
+  @apply text-9xl mb-6;
   background: linear-gradient(180deg, #67b6ff, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2.5px #243041;
-  top: -20%;
+  -webkit-text-stroke: 2px #243041;
+  top: -23%;
 }
 
 @media (max-width: 840px) {
   .modal-content {
-    @apply w-2/5;
+    @apply w-8/12	 h-1/2;
   }
 
   .title {
-    @apply text-7xl mb-4;
+    @apply mb-4;
     -webkit-text-stroke: 2px #243041;
-    top: -20%;
+    top: -27%;
+    font-size: 9rem;
+    line-height: 2;
   }
 
   .modal-content button {
-    @apply text-lg py-2 px-4;
+    @apply text-4xl py-5 px-10 my-6;
   }
 }
 
 @media (max-width: 480px) {
   .modal-content {
-    @apply w-3/5;
+    @apply w-3/5 h-2/5;
+    border-radius: 72px;
+    box-shadow: inset 0 -5px 0 2px #140e66, inset 0 4px 0 5px #2463ff;
+    --y: -50vh;
+    --time-scale: 2;
   }
 
   .title {
-    @apply text-5xl mb-3;
+    @apply text-7xl mb-3;
     -webkit-text-stroke: 2px #243041;
-    top: -15%;
+    top: -13%;
   }
 
   .modal-content button {
-    @apply text-base py-1 px-2;
+    @apply text-xl py-2 px-3 my-4;
   }
 }

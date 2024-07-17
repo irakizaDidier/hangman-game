@@ -1,5 +1,5 @@
 .hangman-background {
-  @apply flex flex-col items-center justify-center min-h-screen bg-cover bg-center;
+  @apply flex flex-col items-center justify-center  bg-center;
 }
 
 .game-container {
@@ -41,16 +41,24 @@
   background: linear-gradient(180deg, #ff7eb3, #679dae);
   border-radius: 50%;
   border: none;
+  box-shadow: inset 0 -5px 0 2px #9d2df5, 0 3px 0 2px #243041;
+  --y: -50vh;
+  --time-scale: 2;
 }
 
 .play-button:hover {
   @apply scale-110;
+  box-shadow: inset 0 -5px 0 2px #9d2df5, 0 3px 0 2px #243041;
 }
 
 .hangman-button {
   @apply text-white font-bold py-3 px-8 rounded-3xl transition-colors duration-300 cursor-pointer;
   background-color: #2463ff;
   text-transform: uppercase;
+  border: none;
+  box-shadow: inset 0 -5px 0 2px #140e66;
+  --y: -50vh;
+  --time-scale: 2;
 }
 
 .play-button img {
@@ -86,6 +94,9 @@
   .logo {
     width: 95%;
   }
+  .hangman-background {
+    @apply mt-0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -105,18 +116,21 @@
   }
 
   .play-button {
-    @apply w-16 h-16;
+    @apply w-20 h-20;
   }
 
   .play-button img {
-    @apply w-8 h-8;
+    @apply w-10 h-10;
   }
 
   .hangman-button {
-    @apply py-1 px-2;
+    @apply py-3 px-5 text-xl;
   }
   .logo {
     width: 68%;
     @apply ml-12;
+  }
+  .hangman-background {
+    @apply mt-0;
   }
 }
